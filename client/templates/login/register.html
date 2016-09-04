@@ -1,0 +1,14 @@
+<!-- 사용자 등록 템플릿 -->
+<template name="register">
+    <form class="register-submit col-md-5 col-md-offset-5">
+        <h3><label class="label">Email</label></h3>
+        <input type="email" class="register-email input-sm">
+        <h3><label class="label">Password</label></h3>
+        <input type="password" class="register-password input-sm">
+        <button type="submit" class="btn btn-success">Create New Account</button>
+        <button type="button" class="back btn btn-warning">Back</button>
+
+        <!-- 에러 메시지를 보여준다. -->
+        <h4><span class="error-message label label-danger">{{registerErrorMessage}}</span></h4>
+    </form>
+</template>

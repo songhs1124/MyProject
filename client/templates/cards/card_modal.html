@@ -1,0 +1,37 @@
+<!-- 카드를 편집하고 댓글을 등록하기 위한 modal 템플릿 -->
+<template name="cardModal">
+    <div class="card-modal modal fade">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close-card-modal close">X</button>
+                    <h4 class="card-title modal-title">
+                        {{card.cardName}}
+                    </h4>
+
+                    <!-- 카드 수정 템플릿을 호출 -->
+                    {{>cardEdit}}
+                </div>
+                <div class="modal-body">
+
+                    <!-- 댓글 등록 템플릿 호출-->
+                    {{> commentSubmit}}
+                </div>
+                <div class="comments list-group">
+
+                    <!-- 댓글 템플릿 목록 호출 -->
+                    {{#each comments}}
+                        {{> comment}}
+                    {{/each}}
+                </div>
+                <div class="modal-footer">
+
+                    <!-- 카드를 등록한 사용자만 카드 삭제 버튼을 보여준다. -->
+                    {{#if isOwner}}
+                        <button type="button" class="del-card btn btn-danger">Delete Card</button>
+                    {{/if}}
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

@@ -1,0 +1,11 @@
+<!-- 카드 내용과 댓글을 보여주는 템플릿 -->
+<template name="card">
+    <div class="card-item list-group-item">
+        {{cardName}}
+
+        <!-- 댓글이 있을 경우에만 댓글 아이콘을 보여준다. -->
+        {{#if isNotZero}}
+            <span class="glyphicon glyphicon-comment"></span>{{commentsCount}}
+        {{/if}}
+    </div>
+</template>

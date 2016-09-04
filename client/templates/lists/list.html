@@ -1,0 +1,29 @@
+<!-- 리스트 내용과 카드들을 보여주는 템플릿 -->
+<template name="list">
+    <div class="list-content panel panel-default">
+        <div class="panel-heading">
+            <h3 class="list-title panel-title">
+                    {{ listName }}
+            </h3>
+
+            <!-- 리스트 수정 템플릿을 호출 -->
+            {{>listEdit}}
+
+            <!-- 리스트를 등록한 사용자만 리스트 삭제 버튼을 보여준다.  -->
+            {{#if isOwner}}
+                <button type="button" class="del-list btn btn-danger">Delete List</button>
+            {{/if}}
+        </div>
+        <div class="panel-body">
+            {{> cards }}
+
+            <!-- 리스트를 등록한 사용자만 카드 등록 버튼을 보여준다. -->
+            {{#if isOwner}}
+                <button type="button" class="add-card btn btn-success">Add Card</button>
+            {{/if}}
+        </div>
+
+        <!-- 카드 등록 템플릿을 호출 -->
+        {{> cardSubmit }}
+    </div>
+</template>

@@ -1,0 +1,26 @@
+<!-- 리스트 목록을 나열하는 템플릿 -->
+<template name="lists">
+
+    <!-- 로그인이 포함되어 있는 헤더 템플릿 호출 -->
+    {{> header}}
+    <div class="main">
+        <h3>MyProject</h3>
+        <div class="content">
+            {{#if currentUser}}
+                <div class="lists panel-group">
+
+                    <!-- 리스트 템플릿 목록 호출출 -->
+                   {{#each lists}}
+                        {{> list}}
+                    {{/each}}
+                </div>
+                <button type="button" class="add-list btn btn-success">Add a list</button>
+                <div class="list-submit-panel panel">
+
+                    <!-- 리스트 등록 템플릿 호출-->
+                    {{> listSubmit }}
+                </div>
+            {{/if}}
+        </div>
+    </div>
+</template>

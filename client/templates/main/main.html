@@ -1,0 +1,15 @@
+<!-- 로그인과 사용자 생성 버튼을 포함하는 메인 템플릿 -->
+<head>
+    <title>MyProject</title>
+</head>
+<template name="main">
+    <form class="main-form col-md-3 col-md-offset-5">
+        <h3>Welcome MyProject</h3>
+        <a href="{{pathFor 'login'}}">
+            <button type="button" class="btn btn-primary">Log in</button>
+        </a>
+        <a href="{{pathFor 'register'}}">
+            <button type="button" class="btn btn-success">Sign Up</button>
+        </a>
+    </form>
+</template>

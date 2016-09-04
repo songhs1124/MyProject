@@ -1,0 +1,18 @@
+<!-- 댓글 내용을 보여주는 템플릿 -->
+<template name="comment">
+    <div class="comment-title">{{userEmail}}</div>
+    <div class="comment-body">
+        <div class="list-group-item">
+            {{commentContent}}
+        </div>
+
+        <!-- 댓글을 등록한 사용자만 수정, 삭제 버튼을 보여준다. -->
+        {{#if isOwner}}
+            <button type="button" class="edit-comment glyphicon glyphicon-edit"></button>
+            <button type="button" class="del-comment glyphicon glyphicon-remove"></button>
+        {{/if}}
+    </div>
+
+    <!-- 댓글 수정 템플릿을 호출 -->
+    {{>commentEdit}}
+</template>
